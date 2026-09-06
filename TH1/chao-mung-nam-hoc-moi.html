@@ -1,0 +1,403 @@
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Góc học tập của tôi</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f7fb;
+            color: #263238;
+            transition: all 0.3s ease;
+        }
+
+        header {
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            padding: 28px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.12);
+        }
+
+        .logo h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .logo p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+
+        nav {
+            background-color: white;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #374151;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #4f46e5;
+        }
+
+        #themeButton {
+            border: none;
+            background-color: #4f46e5;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        #themeButton:hover {
+            background-color: #3730a3;
+            transform: scale(1.05);
+        }
+
+
+        main {
+            width: 84%;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+
+        .welcome {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            margin-bottom: 35px;
+        }
+
+        #greeting {
+            color: #4f46e5;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .welcome h2 {
+            font-size: 38px;
+            margin-bottom: 18px;
+        }
+
+        .welcome p {
+            color: #64748b;
+            font-size: 17px;
+            line-height: 1.7;
+            max-width: 750px;
+            margin: auto;
+        }
+
+
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 28px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-icon {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #4f46e5;
+        }
+
+        .card p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #1e293b;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* ================= DARK MODE ================= */
+
+        body.dark {
+            background-color: #111827;
+            color: #f9fafb;
+        }
+
+        body.dark nav {
+            background-color: #1f2937;
+        }
+
+        body.dark nav ul li a {
+            color: #e5e7eb;
+        }
+
+        body.dark nav ul li a:hover {
+            color: #818cf8;
+        }
+
+        body.dark .welcome,
+        body.dark .card {
+            background-color: #1f2937;
+            color: #f9fafb;
+        }
+
+        body.dark .welcome p,
+        body.dark .card p {
+            color: #cbd5e1;
+        }
+
+        body.dark #greeting,
+        body.dark .card h3 {
+            color: #818cf8;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 800px) {
+            header,
+            nav {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            main {
+                width: 90%;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .welcome {
+                padding: 35px 20px;
+            }
+
+            .welcome h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+        <div class="logo">
+            <h1>📚 Góc học tập của tôi</h1>
+            <p>Nơi lưu giữ kiến thức và hành trình học tập</p>
+        </div>
+    </header>
+
+
+    <nav>
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Môn học</a></li>
+            <li><a href="#">Tài liệu</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+
+        <button id="themeButton">
+            🌙 Chế độ tối
+        </button>
+    </nav>
+
+
+    <main>
+
+        <section class="welcome">
+
+            <h2 id="greeting">
+                Chào mừng!
+            </h2>
+
+            <h1>
+                Chào mừng đến góc học tập của tôi
+            </h1>
+
+            <p>
+                Đây là không gian cá nhân dành cho việc học tập,
+                khám phá kiến thức và phát triển bản thân.
+                Mỗi ngày học thêm một điều mới là một bước tiến
+                gần hơn đến mục tiêu của tôi.
+            </p>
+
+        </section>
+
+
+        <h2 class="section-title">
+            📖 Những nội dung tôi đang học
+        </h2>
+
+        <section class="cards">
+
+            <div class="card">
+                <div class="card-icon">💻</div>
+
+                <h3>Lập trình</h3>
+
+                <p>
+                    Học các ngôn ngữ lập trình, thuật toán,
+                    cấu trúc dữ liệu và phát triển phần mềm.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="card-icon">🌐</div>
+
+                <h3>Mạng máy tính</h3>
+
+                <p>
+                    Tìm hiểu về TCP/IP, địa chỉ IP, VLAN,
+                    Routing, OSPF, VPN và các kiến thức CCNA.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="card-icon">🧠</div>
+
+                <h3>DSA</h3>
+
+                <p>
+                    Rèn luyện tư duy thuật toán thông qua
+                    Sorting, Searching, DFS, BFS, Dynamic
+                    Programming và Backtracking.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>
+            2026 - Góc học tập của tôi | Học tập mỗi ngày 🚀
+        </p>
+    </footer>
+
+
+    <script>
+        const now = new Date();
+
+        const hour = now.getHours();
+
+        const greeting = document.getElementById("greeting");
+
+
+        if (hour >= 5 && hour < 12) {
+
+            greeting.innerText = " Chào buổi sáng!";
+
+        }
+        else if (hour >= 12 && hour < 18) {
+
+            greeting.innerText = " Chào buổi chiều!";
+
+        }
+        else {
+
+            greeting.innerText = " Chào buổi tối!";
+
+        }
+
+
+       
+
+        const themeButton = document.getElementById("themeButton");
+
+
+        themeButton.addEventListener("click", function () {
+
+            // Thêm / xóa class dark cho body
+            document.body.classList.toggle("dark")
+
+
+            // Kiểm tra trạng thái hiện tại
+            if (document.body.classList.contains("dark")) {
+
+                themeButton.innerText = "☀️ Chế độ sáng";
+
+                // Có thể thao tác trực tiếp bằng .style
+                themeButton.style.backgroundColor = "#6366f1";
+
+            }
+            else {
+
+                themeButton.innerText = "🌙 Chế độ tối";
+
+                // Đổi màu nút bằng .style
+                themeButton.style.backgroundColor = "#4f46e5";
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
+```
